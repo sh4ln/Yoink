@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "yoink"
+version = "6.0.0"
+description = "Faster, smarter, human-readable file operations for the command line."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "SH4LN" }]
+requires-python = ">=3.10"
+keywords = ["cli", "files", "copy", "move", "convert"]
+dependencies = [
+    "aiofiles>=23.0",
+    "filelock>=3.13",
+    "send2trash>=1.8",
+    "click>=8.1",
+    "rich>=13.0",
+    "ffmpeg-python>=0.2",
+    "static-ffmpeg>=2.5",
+]
+
+[project.urls]
+Repository = "https://github.com/sh4ln/yoink"
+
+[project.scripts]
+yoink = "yoink.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["yoink*"]
